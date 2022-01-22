@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    HOME
+    HOME 
 </body>
 </html>
