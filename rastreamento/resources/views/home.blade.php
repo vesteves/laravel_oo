@@ -9,7 +9,7 @@
             @foreach($produtos as $produto)
             <div class="col-4">
                 <div class="card w-100">
-                    <img src="https://via.placeholder.com/400" class="card-img-top">
+                    <img src="{{ $produto->imagem_url }}" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">{{ $produto->nome }}</h5>
                         <p class="card-text">{{ $produto->descricao }}</p>

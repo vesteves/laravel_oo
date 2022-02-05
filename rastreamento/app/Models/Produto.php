@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Produto extends Model
 {
@@ -13,7 +14,22 @@ class Produto extends Model
 
     protected $fillable = [
         'nome',
+        'imagem',
         'preco',
         'descricao',
     ];
+
+    protected $appends = ['imagem_url'];
+
+    /*
+    public function getImagemAttribute($value)
+    {
+        return Storage::url($value);
+    }
+    */
+
+    public function getImagemUrlAttribute()
+    {
+        return Storage::url($this->attributes['imagem']);
+    }
 }

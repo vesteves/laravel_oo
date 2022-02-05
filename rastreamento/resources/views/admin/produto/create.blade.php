@@ -4,8 +4,13 @@
         <div class="row">
             <div class="col">
                 <h1>FORMULÁRIO DE CRIAÇÃO</h1>
-                <form method="POST" action="/produto" class="mt-4">
+                <form method="POST" action="/produto" enctype="multipart/form-data" class="mt-4">
                     @csrf
+                    <div class="mb-3">
+                        <label for="imagem" class="form-label">Imagem</label>
+                        <input type="file" class="form-control" name="imagem" aria-describedby="imagemHelp">
+                        <div id="imagemHelp" class="form-text">Coloque aqui a imagem do produto.</div>
+                    </div>
                     <div class="mb-3">
                         <label for="nome" class="form-label">Nome</label>
                         <input type="text" class="form-control" name="nome" aria-describedby="nomeHelp">
