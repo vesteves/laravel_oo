@@ -7,7 +7,7 @@
                 <form method="POST" action="/categoria/{{ $categoria->id }}" enctype="multipart/form-data" class="mt-4">
                     @csrf
                     @method('PUT')
-                    
+
                     <div class="mb-3">
                         <label for="nome" class="form-label">Nome</label>
                         <input type="text" class="form-control" name="nome" aria-describedby="nomeHelp" value="{{ $categoria->nome }}">

@@ -30,6 +30,15 @@
                         <input type="text" class="form-control" name="descricao" aria-describedby="descricaoHelp" value="{{ $produto->descricao }}">
                         <div id="descricaoHelp" class="form-text">Coloque aqui a descrição do produto.</div>
                     </div>
+                    <div class="mb-3">
+                        <label for="categoria_id" class="form-label">Categoria</label>
+                        <select name="categoria_id" id="categoria_id" class="form-control" aria-describedby="categoriaIdHelp">
+                            @foreach ($categorias as $categoria)
+                            <option value="{{ $categoria->id }}" selected="{{ $categoria->id === $produto->categoria->id ? 'selected' : '' }}">{{ $categoria->nome }}</option>
+                            @endforeach
+                        </select>
+                        <div id="categoriaIdHelp" class="form-text">Escolha a categoria do produto.</div>
+                    </div>
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
             </div>

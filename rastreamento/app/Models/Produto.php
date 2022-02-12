@@ -25,4 +25,9 @@ class Produto extends Model
     {
         return Storage::url($this->attributes['imagem']);
     }
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
 }

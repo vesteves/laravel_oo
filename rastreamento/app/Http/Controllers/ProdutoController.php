@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Storage;
 use \App\Models\Produto;
 use \App\Helpers\Produto as ProdutoHelper;
 
+use \App\Models\Categoria;
+
 class ProdutoController extends Controller
 { 
     public function __construct()
@@ -24,7 +26,9 @@ class ProdutoController extends Controller
 
     public function create()
     {
-        return view('admin/produto/create');
+        return view('admin/produto/create', [
+            "categorias" => Categoria::all()
+        ]);
     }
 
     public function store(Request $request)
@@ -37,7 +41,8 @@ class ProdutoController extends Controller
             "nome" => $request->nome,
             "preco" => $request->preco,
             "descricao" => $request->descricao,
-            "imagem" => $imagem
+            "imagem" => $imagem,
+            "categoria_id" => $request->categoria_id
         ]);
 
         return redirect('/admin')->with('success', 'Produto criado com sucesso');
@@ -46,7 +51,8 @@ class ProdutoController extends Controller
     public function edit(Produto $produto)
     {
         return view('admin/produto/edit', [
-            "produto" => $produto
+            "produto" => $produto,
+            "categorias" => Categoria::all()
         ]);
     }
 
@@ -59,6 +65,7 @@ class ProdutoController extends Controller
         $produto->nome = $request->nome;
         $produto->preco = $request->preco;
         $produto->descricao = $request->descricao;
+        $produto->categoria_id = $request->categoria_id;
         $produto->save();
 
         return redirect('/admin')->with('success', 'Produto atualizado com sucesso');
