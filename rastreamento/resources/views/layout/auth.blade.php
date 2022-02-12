@@ -39,6 +39,9 @@
                 <ul>
                     <li><a href="/admin">Listagem de Produtos</a></li>
                     <li><a href="/admin/produto/create">Criação de Produto</a></li>
+                    <li><hr></li>
+                    <li><a href="/admin/categoria">Listagem de Categorias</a></li>
+                    <li><a href="/admin/categoria/create">Criação de Categoria</a></li>
                 </ul>
             </div>
             <div class="col">@yield('conteudo')</div>

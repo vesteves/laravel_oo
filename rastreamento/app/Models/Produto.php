@@ -21,13 +21,6 @@ class Produto extends Model
 
     protected $appends = ['imagem_url'];
 
-    /*
-    public function getImagemAttribute($value)
-    {
-        return Storage::url($value);
-    }
-    */
-
     public function getImagemUrlAttribute()
     {
         return Storage::url($this->attributes['imagem']);

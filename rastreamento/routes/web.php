@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,15 @@ Route::post('/produto', [ProdutoController::class, 'store']);
 Route::put('/produto/{produto}', [ProdutoController::class, 'update']);
 Route::delete('/produto/{produto}', [ProdutoController::class, 'destroy']);
 
+Route::get('/categoria/{categoria}', [CategoriaController::class, 'show']);
+Route::post('/categoria', [CategoriaController::class, 'store']);
+Route::put('/categoria/{categoria}', [CategoriaController::class, 'update']);
+Route::delete('/categoria/{categoria}', [CategoriaController::class, 'destroy']);
+
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/admin/produto/create', [ProdutoController::class, 'create']);
 Route::get('/admin/produto/{produto}', [ProdutoController::class, 'edit']);
+
+Route::get('/admin/categoria', [CategoriaController::class, 'index']);
+Route::get('/admin/categoria/create', [CategoriaController::class, 'create']);
+Route::get('/admin/categoria/{categoria}', [CategoriaController::class, 'edit']);
