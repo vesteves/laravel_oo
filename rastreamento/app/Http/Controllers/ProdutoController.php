@@ -40,7 +40,7 @@ class ProdutoController extends Controller
             "imagem" => $imagem
         ]);
 
-        return redirect('/admin');
+        return redirect('/admin')->with('success', 'Produto criado com sucesso');
     }
 
     public function edit(Produto $produto)
@@ -61,6 +61,12 @@ class ProdutoController extends Controller
         $produto->descricao = $request->descricao;
         $produto->save();
 
-        return redirect('/admin');
+        return redirect('/admin')->with('success', 'Produto atualizado com sucesso');
+    }
+
+    public function destroy(Produto $produto)
+    {
+        $produto->delete();
+        return redirect('/admin')->with('danger', 'Produto removido.');
     }
 }
