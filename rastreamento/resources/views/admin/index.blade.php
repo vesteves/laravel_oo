@@ -16,7 +16,7 @@
                 <th scope="row">{{ $produto->id }}</th>
                 <td>{{ $produto->nome }}</td>
                 <td>{{ $produto->preco }}</td>
-                <td><a href="">Editar</a></td>
+                <td><a href="/admin/produto/{{ $produto->id }}">Editar</a></td>
                 <td>Excluir</td>
             </tr>
             @endforeach

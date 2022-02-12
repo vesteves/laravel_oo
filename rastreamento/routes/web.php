@@ -24,6 +24,8 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/produto/{produto}', [ProdutoController::class, 'show']);
 Route::post('/produto', [ProdutoController::class, 'store']);
+Route::put('/produto/{produto}', [ProdutoController::class, 'update']);
 
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/admin/produto/create', [ProdutoController::class, 'create']);
+Route::get('/admin/produto/{produto}', [ProdutoController::class, 'edit']);
