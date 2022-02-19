@@ -12,7 +12,7 @@
         <div class="col">
             <div>Preço: {{ $produto->preco }}</div>
             <div>Descrição: {{ $produto->descricao }}</div>
-            <button class="btn btn-primary">Comprar</button>
+            <a href="{{ Auth::check() ? '/checkout' : '/login' }}" class="btn btn-primary">Comprar</button>
             <a href="/" class="btn btn-primary">Voltar</a>
         </div>
     </div>

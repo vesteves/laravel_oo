@@ -15,6 +15,7 @@ class ProdutoController extends Controller
     public function __construct()
     {
         $this->helper = new ProdutoHelper();
+        $this->middleware('auth', ['except' => ['show']]);
     }
 
     public function show(Produto $produto)

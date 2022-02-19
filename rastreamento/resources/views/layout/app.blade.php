@@ -30,7 +30,16 @@
 <body>
     <nav class="d-flex justify-content-between align-items-center navbar px-2 mb-5">
         <div>Rastreamento</div>
-        <div>Login</div>
+        @if (Auth::check())
+        <div>
+            <form action="/logout" method="POST">
+                @csrf
+                <button class="btn btn-link">{{ Auth::user()->name }}</button>
+            </form>
+        </div>
+        @else
+            <div><a href="/login">Login</a></div>
+        @endif
     </nav>
 
     @yield('conteudo')

@@ -30,7 +30,12 @@
 <body>
     <nav class="d-flex justify-content-between align-items-center navbar px-2 mb-5">
         <div>Rastreamento</div>
-        <div>Login</div>
+        <div>
+            <form action="/logout" method="POST">
+                @csrf
+                <button class="btn btn-link">Logout</button>
+            </form>
+        </div>
     </nav>
 
     <div class="container fimdoconteudo">
