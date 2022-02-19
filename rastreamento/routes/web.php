@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\AdminController;
@@ -21,6 +22,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/produto/{produto}', [ProdutoController::class, 'show']);
@@ -40,3 +45,5 @@ Route::get('/admin/produto/{produto}', [ProdutoController::class, 'edit']);
 Route::get('/admin/categoria', [CategoriaController::class, 'index']);
 Route::get('/admin/categoria/create', [CategoriaController::class, 'create']);
 Route::get('/admin/categoria/{categoria}', [CategoriaController::class, 'edit']);
+
+require __DIR__.'/auth.php';
