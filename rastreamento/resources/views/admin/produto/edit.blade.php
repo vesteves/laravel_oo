@@ -7,7 +7,7 @@
                 <form method="POST" action="/produto/{{ $produto->id }}" enctype="multipart/form-data" class="mt-4">
                     @csrf
                     @method('PUT')
-                    
+
                     <div class="mb-3">
                         <label for="imagem" class="form-label">Imagem</label>
                         <br>
@@ -34,7 +34,7 @@
                         <label for="categoria_id" class="form-label">Categoria</label>
                         <select name="categoria_id" id="categoria_id" class="form-control" aria-describedby="categoriaIdHelp">
                             @foreach ($categorias as $categoria)
-                            <option value="{{ $categoria->id }}" selected="{{ $categoria->id === $produto->categoria->id ? 'selected' : '' }}">{{ $categoria->nome }}</option>
+                            <option value="{{ $categoria->id }}" selected="{{ $produto->categoria && $categoria->id === $produto->categoria->id ? 'selected' : '' }}">{{ $categoria->nome }}</option>
                             @endforeach
                         </select>
                         <div id="categoriaIdHelp" class="form-text">Escolha a categoria do produto.</div>

@@ -26,6 +26,15 @@
                         <input type="text" class="form-control" name="descricao" aria-describedby="descricaoHelp">
                         <div id="descricaoHelp" class="form-text">Coloque aqui a descrição do produto.</div>
                     </div>
+
+                    <div class="mb-3">
+                        <select name="categoria_id" id="categoria_id" class="form-control" aria-describedby="categoriaIdHelp">
+                            @foreach ($categorias as $categoria)
+                            <option value="{{ $categoria->id }}" selected="">{{ $categoria->nome }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
             </div>

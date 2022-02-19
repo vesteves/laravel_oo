@@ -11,7 +11,7 @@ use \App\Helpers\Produto as ProdutoHelper;
 use \App\Models\Categoria;
 
 class ProdutoController extends Controller
-{ 
+{
     public function __construct()
     {
         $this->helper = new ProdutoHelper();
