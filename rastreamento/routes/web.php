@@ -52,4 +52,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 });
 
 Route::get('/checkout', [CheckoutController::class, 'index']);
+Route::get('/contato', [HomeController::class, 'contato']);
+Route::post('/contato', [HomeController::class, 'enviar']);
+
 require __DIR__.'/auth.php';

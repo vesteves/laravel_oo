@@ -48,7 +48,7 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <strong>Este é um footer</strong>
+                    <strong><a href="/contato">Contato</a></strong>
                 </div>
             </div>
         </div>
