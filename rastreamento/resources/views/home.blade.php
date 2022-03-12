@@ -5,6 +5,7 @@
     </div>
 
     <div class="container fimdoconteudo">
+        <hello :categorias="{{ $categorias }}"></hello>
         @foreach($categorias as $categoria)
         <div class="row mb-5">
             <div class="col">
